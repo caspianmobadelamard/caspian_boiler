@@ -17,7 +17,6 @@
         }
 
         body {
-            /* استفاده از عکس دیگ بخار به عنوان پس‌زمینه */
             background-image: url('boiler.jpg');
             background-size: cover;
             background-position: center;
@@ -28,9 +27,9 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            padding: 20px 0;
         }
 
-        /* لایه تاریک روی عکس برای خوانایی بهتر متن‌ها */
         body::before {
             content: '';
             position: absolute;
@@ -38,27 +37,25 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 15, 0.75); /* تاریکی ۷۵٪ */
-            backdrop-filter: blur(4px); /* افکت بلور */
+            background: rgba(10, 10, 15, 0.78);
+            backdrop-filter: blur(4px);
             z-index: 1;
         }
 
-        /* کادر اصلی وسط صفحه */
         .container {
             position: relative;
             z-index: 2;
-            background: rgba(20, 20, 30, 0.85);
-            border: 2px solid #00ffff; /* حاشیه نئونی فیروزه‌ای */
+            background: rgba(20, 20, 30, 0.88);
+            border: 2px solid #00ffff;
             border-radius: 20px;
-            padding: 50px 40px;
+            padding: 40px 35px;
             text-align: center;
-            box-shadow: 0 0 20px #00ffff, inset 0 0 20px #00ffff; /* درخشش نئونی */
-            max-width: 600px;
+            box-shadow: 0 0 20px #00ffff, inset 0 0 20px #00ffff;
+            max-width: 620px;
             width: 90%;
             animation: pulse-border 2s infinite alternate;
         }
 
-        /* انیمیشن درخشش کادر */
         @keyframes pulse-border {
             0% { box-shadow: 0 0 15px #00ffff, inset 0 0 15px #00ffff; }
             100% { box-shadow: 0 0 30px #00ffff, inset 0 0 30px #00ffff; }
@@ -67,21 +64,22 @@
         h1 {
             color: #ffffff;
             font-size: 2rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* متن نئونی */
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
         }
 
-        p {
+        .subtitle {
             color: #cccccc;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
+            font-size: 1rem;
+            margin-bottom: 30px;
         }
 
         /* دکمه‌ها */
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
+            margin-bottom: 35px;
         }
 
         .btn {
@@ -89,8 +87,8 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
-            padding: 18px 30px;
-            font-size: 1.2rem;
+            padding: 16px 30px;
+            font-size: 1.15rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 12px;
@@ -99,7 +97,6 @@
             background: transparent;
         }
 
-        /* دکمه کاتالوگ - رنگ فیروزه‌ای نئونی */
         .btn-catalog {
             color: #00ffff;
             border: 2px solid #00ffff;
@@ -113,7 +110,6 @@
             transform: translateY(-3px);
         }
 
-        /* دکمه رزومه - رنگ صورتی/بنفش نئونی */
         .btn-resume {
             color: #ff00ff;
             border: 2px solid #ff00ff;
@@ -127,11 +123,83 @@
             transform: translateY(-3px);
         }
 
+        /* بخش اطلاعات تماس */
+        .contact-section {
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+            padding-top: 25px;
+            margin-top: 10px;
+        }
+
+        .contact-title {
+            color: #00ffff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+            text-shadow: 0 0 8px #00ffff;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 420px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 255, 255, 0.15);
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .contact-item i {
+            color: #00ffff;
+            font-size: 1.1rem;
+            text-shadow: 0 0 8px #00ffff;
+            min-width: 20px;
+        }
+
+        .contact-item .label {
+            color: #aaaaaa;
+            font-size: 0.85rem;
+        }
+
+        .contact-item .value {
+            color: #ffffff;
+            direction: ltr;
+            font-weight: bold;
+        }
+
+        .contact-item .manager-name {
+            color: #ff00ff;
+            font-size: 0.85rem;
+            text-shadow: 0 0 6px #ff00ff;
+        }
+
         /* تنظیمات موبایل */
         @media (max-width: 480px) {
-            h1 { font-size: 1.5rem; }
-            .container { padding: 30px 20px; }
-            .btn { font-size: 1rem; padding: 15px 20px; }
+            h1 { font-size: 1.4rem; }
+            .container { padding: 25px 18px; }
+            .btn { font-size: 1rem; padding: 14px 20px; }
+            .contact-item { font-size: 0.85rem; padding: 9px 12px; }
+            .contact-item .label { display: none; }
         }
     </style>
 </head>
@@ -139,20 +207,49 @@
 
     <div class="container">
         <h1>کاسپین مبدل آمارد</h1>
-        <p>برای دریافت فایل‌ها، روی دکمه‌های زیر کلیک کنید</p>
+        <p class="subtitle">برای دریافت فایل‌ها، روی دکمه‌های زیر کلیک کنید</p>
         
         <div class="buttons">
-            <!-- لینک کاتالوگ جایگزین شد -->
             <a href="https://caspianmobadelamard.github.io/caspian_boiler/caspian-catalog.pdf" target="_blank" class="btn btn-catalog">
                 <i class="fas fa-book-open"></i>
                 دانلود کاتالوگ محصولات
             </a>
             
-            <!-- لینک رزومه جایگزین شد -->
             <a href="https://caspianmobadelamard.github.io/caspian_boiler/caspian-resume.pdf" target="_blank" class="btn btn-resume">
                 <i class="fas fa-file-pdf"></i>
                 دانلود رزومه شرکت
             </a>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-title">
+                <i class="fas fa-address-card"></i>
+                راه‌های ارتباطی
+            </div>
+            
+            <div class="contact-list">
+                <!-- وب‌سایت -->
+                <a href="https://www.caspianboiler.com/" target="_blank" class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <span class="label">وب‌سایت:</span>
+                    <span class="value">www.caspianboiler.com</span>
+                </a>
+
+                <!-- اینستاگرام -->
+                <a href="https://instagram.com/_caspianboiler_" target="_blank" class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <span class="label">اینستاگرام:</span>
+                    <span class="value">_caspianboiler_</span>
+                </a>
+
+                <!-- شماره تماس -->
+                <a href="tel:+989113217728" class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="label">مدیریت بازرگانی:</span>
+                    <span class="value">0911 321 7728</span>
+                    <span class="manager-name">(سید محمد حسینی)</span>
+                </a>
+            </div>
         </div>
     </div>
 
