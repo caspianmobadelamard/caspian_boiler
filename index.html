@@ -1,12 +1,160 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>دانلود فایل‌های کاسپین</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دانلود کاتالوگ و رزومه | کاسپین مبدل آمارد</title>
+    <!-- فونت فارسی و آیکون‌ها -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            /* استفاده از عکس دیگ بخار به عنوان پس‌زمینه */
+            background-image: url('boiler.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* لایه تاریک روی عکس برای خوانایی بهتر متن‌ها */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.75); /* تاریکی ۷۵٪ */
+            backdrop-filter: blur(4px); /* افکت بلور */
+            z-index: 1;
+        }
+
+        /* کادر اصلی وسط صفحه */
+        .container {
+            position: relative;
+            z-index: 2;
+            background: rgba(20, 20, 30, 0.85);
+            border: 2px solid #00ffff; /* حاشیه نئونی فیروزه‌ای */
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 0 20px #00ffff, inset 0 0 20px #00ffff; /* درخشش نئونی */
+            max-width: 600px;
+            width: 90%;
+            animation: pulse-border 2s infinite alternate;
+        }
+
+        /* انیمیشن درخشش کادر */
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 15px #00ffff, inset 0 0 15px #00ffff; }
+            100% { box-shadow: 0 0 30px #00ffff, inset 0 0 30px #00ffff; }
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* متن نئونی */
+        }
+
+        p {
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* دکمه‌ها */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 18px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        /* دکمه کاتالوگ - رنگ فیروزه‌ای نئونی */
+        .btn-catalog {
+            color: #00ffff;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
+        }
+
+        .btn-catalog:hover {
+            background: #00ffff;
+            color: #000000;
+            box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
+            transform: translateY(-3px);
+        }
+
+        /* دکمه رزومه - رنگ صورتی/بنفش نئونی */
+        .btn-resume {
+            color: #ff00ff;
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
+        }
+
+        .btn-resume:hover {
+            background: #ff00ff;
+            color: #000000;
+            box-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+            transform: translateY(-3px);
+        }
+
+        /* تنظیمات موبایل */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.5rem; }
+            .container { padding: 30px 20px; }
+            .btn { font-size: 1rem; padding: 15px 20px; }
+        }
+    </style>
 </head>
 <body>
-  <h2>دانلود فایل‌ها</h2>
-  <p><a href="caspian-catalog.pdf" download>دانلود کاتالوگ</a></p>
-  <p><a href="caspian-resume.pdf" download>دانلود رزومه</a></p>
+
+    <div class="container">
+        <h1>کاسپین مبدل آمارد</h1>
+        <p>برای دریافت فایل‌ها، روی دکمه‌های زیر کلیک کنید</p>
+        
+        <div class="buttons">
+            <!-- لینک کاتالوگ را اینجا جایگزین کنید -->
+            <a href="YOUR_CATALOG_LINK" target="_blank" class="btn btn-catalog">
+                <i class="fas fa-book-open"></i>
+                دانلود کاتالوگ محصولات
+            </a>
+            
+            <!-- لینک رزومه را اینجا جایگزین کنید -->
+            <a href="YOUR_RESUME_LINK" target="_blank" class="btn btn-resume">
+                <i class="fas fa-file-pdf"></i>
+                دانلود رزومه شرکت
+            </a>
+        </div>
+    </div>
+
 </body>
 </html>
